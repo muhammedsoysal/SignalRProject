@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalR.WebUI.Dtos.NotificationDto
+namespace SignalR.WebUI.Dtos.NotificationDtos
 {
 	public class UpdateNotificationDto
 	{

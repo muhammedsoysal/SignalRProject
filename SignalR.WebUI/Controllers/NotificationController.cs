@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SignalR.WebUI.Dtos.NotificationDto;
+using SignalR.WebUI.Dtos.NotificationDtos;
 using System.Text;
 
 namespace SignalR.WebUI.Controllers
