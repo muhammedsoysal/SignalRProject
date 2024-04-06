@@ -2,11 +2,11 @@
 
 namespace SignalR.WebUI.Controllers
 {
-    public class FeaturController : Controller
+    public class FeatureController : Controller
     {
         IHttpClientFactory _httpClientFactory;
 
-        public FeaturController(IHttpClientFactory httpClientFactory)
+        public FeatureController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }

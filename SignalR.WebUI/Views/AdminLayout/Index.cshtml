@@ -21,5 +21,37 @@
 		</div>
 	</div>
 	@await Component.InvokeAsync("_LayoutScriptComponentPartial");
+
+	<script>
+		function notificationShow(value) {
+			var id = value;
+			$.ajax({
+				// type: 'Get',
+				data: { item: id },
+				url: "/Notifications/DeleteNotification/" + id,
+				contentType: 'application/json',
+				success: function () {
+					swal({
+						title: "Emin Misin?",
+						text: "Bu Bildirimi Bir Kere Sildiğinizde Kurtaramazsınız!",
+						icon: "warning",
+						buttons: true,
+						dangerMode: true,
+					})
+						.then((willDelete) => {
+							if (willDelete) {
+								swal("Bildirim Silindi!", {
+									icon: "success",
+								});
+							} else {
+								swal("Bildirim Güvende!");
+							}
+						});
+				}
+			});
+		};
+	</script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </body>
 </html>
