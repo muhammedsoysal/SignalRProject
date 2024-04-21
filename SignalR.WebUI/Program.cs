@@ -3,8 +3,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using SignalR.API.Hubs;
+using SignalR.EntityLayer.Entities;
+using SignalR.DataAccessLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddDbContext<SignalRContext>();
+builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<SignalRContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -9,7 +9,7 @@ using SignalR.EntityLayer.Entities;
 
 namespace SignalR.BusinessLayer.Concrete
 {
-	public class BookingManager : IBookingService
+    public class BookingManager : IBookingService
 	{
 		private readonly IBookingDal _bookingDal;
 
@@ -41,5 +41,15 @@ namespace SignalR.BusinessLayer.Concrete
 		{
 			return _bookingDal.GetListAll();
 		}
-	}
+
+        public void TBookingStatusApproved(int id)
+        {
+			_bookingDal.BookingStatusApproved(id);
+        }
+
+        public void TBookingStatusCancelled(int id)
+        {
+            _bookingDal.BookingStatusCancelled(id);
+        }
+    }
 }

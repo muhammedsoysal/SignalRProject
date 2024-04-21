@@ -100,7 +100,7 @@ namespace SignalRApi.Controllers
 				ProductName = updateProductDto.ProductName,
 				ProductStatus = updateProductDto.ProductStatus,
 				ProductId = updateProductDto.ProductId,
-				//CategoryId= updateProductDto.CategoryId
+				CategoryId = updateProductDto.CategoryId
 			});
 			return Ok("Ürün Bilgisi Güncellendi");
 		}

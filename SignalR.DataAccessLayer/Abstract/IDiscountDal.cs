@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SignalR.EntityLayer.Entities;
 
 namespace SignalR.DataAccessLayer.Abstract
 {
 	public interface IDiscountDal: IGenericDal<Discount>
 	{
-	}
+		void ChangStatusToFalse(int id);
+		void ChangStatusToTrue(int id);
+        List<Discount> TGetListByStatusTrue();
+    }
 }

@@ -1,16 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SignalR.EntityLayer.Entities;
+
 
 namespace SignalR.DataAccessLayer.Concrete
 {
-	public class SignalRContext : DbContext
+	public class SignalRContext : IdentityDbContext<AppUser,AppRole,int>
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=LAPTOP-124H4QM2;initial Catalog=SignalRDb;integrated Security=true");
-		}
+            optionsBuilder.UseSqlServer("Server=LAPTOP-124H4QM2;Database=SignalRDb;Integrated Security=True;");
+        }
 
-		public DbSet<About> Abouts { get; set; }
+        public DbSet<About> Abouts { get; set; }
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Booking> Bookings { get; set; }
 		public DbSet<Contact> Contacts { get; set; }
@@ -26,6 +28,7 @@ namespace SignalR.DataAccessLayer.Concrete
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Basket >Baskets{ get; set; }
         public DbSet<Notification >Notifications{ get; set; }
+        public DbSet<Message>Messages{ get; set; }
 
     }
 }

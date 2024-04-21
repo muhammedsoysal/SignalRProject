@@ -44,17 +44,17 @@ namespace SignalR.BusinessLayer.Concrete
 
         public void TChangeStatusToTrue(int id)
         {
-            throw new NotImplementedException();
+            _discountDal.ChangStatusToTrue(id);
         }
 
         public void TChangeStatusToFalse(int id)
         {
-            throw new NotImplementedException();
+            _discountDal.ChangStatusToFalse(id);
         }
 
         public List<Discount> TGetListByStatusTrue()
         {
-            throw new NotImplementedException();
+            return _discountDal.TGetListByStatusTrue();
         }
     }
 }

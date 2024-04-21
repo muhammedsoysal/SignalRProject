@@ -8,9 +8,9 @@ using SignalR.DtoLayer.BookingDto;
 
 namespace SignalR.API.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class BookingController : ControllerBase
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BookingController : ControllerBase
     {
         private readonly IBookingService _bookingService;
 
@@ -68,6 +68,18 @@ namespace SignalR.API.Controllers
             var value = _bookingService.TGetById(id);
             return Ok(value);
         }
+        [HttpGet("BookingStatusApproved/{id}")]
+        public IActionResult BookingStatusApproved(int id)
+        {
+            _bookingService.TBookingStatusApproved(id);
+            return Ok("Rezervasyon Açıklaması Değiştirildi.");
+        }
+        [HttpGet("BookingStatusCancelled/{id}")]
 
+        public IActionResult BookingStatusCancelled(int id)
+        {
+            _bookingService.TBookingStatusCancelled(id);
+            return Ok("Rezervasyon Açıklaması Değiştirildi.");
+        }
     }
 }
