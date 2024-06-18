@@ -47,7 +47,6 @@ namespace SignalR.API.Controllers
         public IActionResult CreateBasket(CreateBasketDto createBasketDto)
         {
             using var context = new SignalRContext();
-
             Basket basket = new Basket
             {
                 ProductId = createBasketDto.ProductId,

@@ -13,6 +13,7 @@ namespace SignalR.BusinessLayer.Concrete
 	{
 		private readonly IAboutDal _aboutDal;
 
+
 		public AboutManager(IAboutDal aboutDal)
 		{
 			_aboutDal = aboutDal;

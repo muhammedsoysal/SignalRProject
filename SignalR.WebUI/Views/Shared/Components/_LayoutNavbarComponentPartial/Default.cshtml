@@ -23,7 +23,7 @@
 				$("#notificationcount").text(value);
 			});
 
-			connection.on("ReceiveNotificationsListByFalse", (value) => {
+			connection.on("ReceiveNotificationListByFalse", (value) => {
 				console.log(value);
 				$("#notilist").empty();
 				for (var i = 0; i < value.length; i++) {
@@ -44,7 +44,7 @@
 	</script>
 
 	<div class="logo-header">
-		<a href="/Category/Index" class="logo">
+		<a href="index.html" class="logo">
 			SignalR Admin
 		</a>
 		<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">

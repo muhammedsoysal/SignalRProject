@@ -41,15 +41,19 @@ namespace SignalR.DataAccessLayer.EntityFramework
 		public string ProductNameByMaxPrice()
 		{
 			using var context = new SignalRContext();
+#pragma warning disable CS8603 // Possible null reference return.
 			return context.Products.Where(x => x.Price == (context.Products.Max(y => y.Price)))
 				.Select(z => z.ProductName).FirstOrDefault();
+#pragma warning restore CS8603 // Possible null reference return.
 		}
 
 		public string ProductNameByMinPrice()
 		{
 			using var context = new SignalRContext();
+#pragma warning disable CS8603 // Possible null reference return.
 			return context.Products.Where(x => x.Price == (context.Products.Min(y => y.Price)))
 				.Select(z => z.ProductName).FirstOrDefault();
+#pragma warning restore CS8603 // Possible null reference return.
 		}
 
 		public decimal ProductAvgPriceByName(string name)

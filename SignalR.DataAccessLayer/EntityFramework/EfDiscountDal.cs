@@ -20,7 +20,9 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             var value = context.Discounts.Find(id);
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             value.Status = false;
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             context.SaveChanges();
         }
 
@@ -28,7 +30,9 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             var value = context.Discounts.Find(id);
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             value.Status = true;
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             context.SaveChanges();
         }
 

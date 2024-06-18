@@ -19,7 +19,9 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             var value = context.Bookings.Find(id);
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             value.Description = "Rezervasyon Onaylandı";
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             context.SaveChanges();
 
         }
@@ -28,7 +30,9 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
             using var context = new SignalRContext();
             var value = context.Bookings.Find(id);
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                         value.Description = "Rezervasyon İptal Edildi";
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
             context.SaveChanges();
         }
     }
